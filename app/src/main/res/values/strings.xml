@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">One pidor</string>
+    <string name="sales_icon_">sales</string>
+    <string name="contacts_text">Контакты</string>
+    <string name="about">Про нас</string>
+    <string name="main_scen">Главное</string>
+    <string name="logo_of_app_1">Courses</string>
+    <string name="logo_of_app_2">App</string>
+    <string name="course_start_date">начала закладования:</string>
+    <string name="course_level">Уровень:</string>
+    <string name="course_start_date2">Старт обучени</string>
+    <string name="corse_level2">Уровень закладчика</string>
+    <string name="course_data_zakladka1">1 января</string>
+    <string name="course_level_zakladka2">начальный</string>
+    <string name="page_java_course">Программа обучения Джава – рассчитанана новичков в данной сфере.За программу вы изучите построениеграфических приложений под ПК,разработку веб сайтов на основе JavaSpring Boot, изучите построениеполноценных Андроид приложенийи отлично изучите сам язык Джава!</string>
+
+</resources>

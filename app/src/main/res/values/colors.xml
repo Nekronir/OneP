@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue">#3F51B5</color>
+    <color name="mainBGcolor">#F6F6F6</color>
+    <color name="sainSVcolor">#EAEAEA</color>
+    <color name="logo_2">#EC6D6D</color>
+    <color name="java_lec">#424345</color>
+    <color name="unity">#C03D3D</color>
+    <color name="charp">#FA5252</color>
+
+</resources>
