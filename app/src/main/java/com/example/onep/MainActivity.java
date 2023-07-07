@@ -1,6 +1,8 @@
 package com.example.onep;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         courseList.add(new Course(3, "ic_unity", "Профессия Unity \nразработчик", "10 января", "начальний", "#C03D3D","test",1));
         courseList.add(new Course(4, "ic_front_end", "Профессия Front-end \nразработчик", "15 января", "начальний", "#VEC6D6D","test",2));
         courseList.add(new Course(5, "ic_csharp", "Профессия C# \nразработчик", "15 мая", "начальний", "#FA5252","test",2));
+        courseList.add(new Course(6, "ic_csharp", "Профессия PHP \nразработчик", "16 января", "начальний", "#4476D6","test",4));
         fullCourseList.addAll(courseList);
         return courseList;
 
@@ -52,6 +55,10 @@ public class MainActivity extends AppCompatActivity {
         categoryList.add(new Category(3, "Языки"));
         categoryList.add(new Category(4, "Прочее"));
         return categoryList;
+    }
+    public void openShoppingCard(View view){
+        Intent intent = new Intent(this, OderPage.class);
+        startActivity(intent);
     }
 
     private void setCourseRecycler(List<Course> courseList) {

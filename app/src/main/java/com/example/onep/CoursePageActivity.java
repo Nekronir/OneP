@@ -1,11 +1,15 @@
 package com.example.onep;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+
+import com.example.onep.model.Oder;
 
 public class CoursePageActivity extends AppCompatActivity {
 
@@ -27,6 +31,13 @@ public class CoursePageActivity extends AppCompatActivity {
         courseDate.setText(getIntent().getStringExtra("courseDate"));
         courseLevel.setText(getIntent().getStringExtra("courseLevel"));
         courseText.setText(getIntent().getStringExtra("courseText"));
+
+
+    }
+    public void addToCard(View view){
+        int item_id =getIntent().getIntExtra("courseId",0);
+        Oder.items_id.add(item_id);
+        Toast.makeText(this,"Добавленно! 0_0",Toast.LENGTH_LONG).show();
 
 
     }

@@ -190,12 +190,13 @@
         android:id="@+id/imageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:contentDescription="one"
+        android:onClick="addToCard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout2"
         app:layout_constraintTop_toBottomOf="@+id/coursePageJava"
-        android:background="@android:color/transparent"
-        app:srcCompat="@drawable/bay_course"
-        android:contentDescription="one"/>
+        app:srcCompat="@drawable/bay_course" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

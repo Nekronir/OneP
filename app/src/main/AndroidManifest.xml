@@ -13,6 +13,9 @@
         android:theme="@style/Theme.OneP"
         tools:targetApi="31">
         <activity
+            android:name=".OderPage"
+            android:exported="false" />
+        <activity
             android:name=".CoursePageActivity"
             android:exported="false" />
         <activity
