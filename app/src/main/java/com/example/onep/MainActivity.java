@@ -15,9 +15,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private RecyclerView categoryRecycler, courseRecycler;
-    private CategoryAdapter categoryAdapter;
-    private CourseAdapter courseAdapter;
+     RecyclerView categoryRecycler, courseRecycler;
+     CategoryAdapter categoryAdapter;
+     CourseAdapter courseAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         courseList.add(new Course(2, "ic_python", "Профессия Python\nразработчик", "7 декабря", "начальний", "#9FA52D","test"));
         courseList.add(new Course(3, "ic_unity", "Профессия Unity \nразработчик", "10 января", "начальний", "#C03D3D","test"));
         courseList.add(new Course(4, "ic_front_end", "Профессия Front-end \nразработчик", "15 января", "начальний", "#VEC6D6D","test"));
-        courseList.add(new Course(5, "ic_front_end", "Профессия C# \nразработчик", "15 мая", "начальний", "#FA5252","test"));
+        courseList.add(new Course(5, "ic_csharp", "Профессия C# \nразработчик", "15 мая", "начальний", "#FA5252","test"));
         return courseList;
     }
 
