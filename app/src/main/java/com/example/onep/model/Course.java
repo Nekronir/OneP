@@ -2,6 +2,7 @@ package com.example.onep.model;
 
 public class Course {
 
+    private int category;
     private int id;
     private String title;
 
@@ -14,7 +15,7 @@ public class Course {
     private String image;
 
 
-    public Course(int id, String img, String title, String date, String level, String color,String text) {
+    public Course(int id, String img, String title, String date, String level, String color,String text, int category) {
         this.id = id;
         this.image = img;
         this.title = title;
@@ -22,6 +23,16 @@ public class Course {
         this.level = level;
         this.color = color;
         this.text = text;
+        this.category = category;
+    }
+
+
+    public int getCategory() {
+        return category;
+    }
+
+    public void setCategory(int category) {
+        this.category = category;
     }
 
     public String getText() {

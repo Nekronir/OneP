@@ -17,7 +17,10 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
      RecyclerView categoryRecycler, courseRecycler;
      CategoryAdapter categoryAdapter;
-     CourseAdapter courseAdapter;
+    static CourseAdapter courseAdapter;
+    static List<Course> courseList = new ArrayList<>();
+    static List<Course> fullCourseList = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,13 +31,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private List<Course> fetchDataToCourseAdapter() {
-        List<Course> courseList = new ArrayList<>();
-        courseList.add(new Course(1, "ic_java", "Профессия Java\nразработчик", "1 октября", "начальний", "#424345","test"));
-        courseList.add(new Course(2, "ic_python", "Профессия Python\nразработчик", "7 декабря", "начальний", "#9FA52D","test"));
-        courseList.add(new Course(3, "ic_unity", "Профессия Unity \nразработчик", "10 января", "начальний", "#C03D3D","test"));
-        courseList.add(new Course(4, "ic_front_end", "Профессия Front-end \nразработчик", "15 января", "начальний", "#VEC6D6D","test"));
-        courseList.add(new Course(5, "ic_csharp", "Профессия C# \nразработчик", "15 мая", "начальний", "#FA5252","test"));
+//        List<Course> courseList = new ArrayList<>();
+        courseList.add(new Course(1, "ic_java", "Профессия Java\nразработчик", "1 октября", "начальний", "#424345","test",3));
+        courseList.add(new Course(2, "ic_python", "Профессия Python\nразработчик", "7 декабря", "начальний", "#9FA52D","test",3));
+        courseList.add(new Course(3, "ic_unity", "Профессия Unity \nразработчик", "10 января", "начальний", "#C03D3D","test",1));
+        courseList.add(new Course(4, "ic_front_end", "Профессия Front-end \nразработчик", "15 января", "начальний", "#VEC6D6D","test",2));
+        courseList.add(new Course(5, "ic_csharp", "Профессия C# \nразработчик", "15 мая", "начальний", "#FA5252","test",2));
+        fullCourseList.addAll(courseList);
         return courseList;
+
+
     }
 
 
@@ -62,5 +68,21 @@ public class MainActivity extends AppCompatActivity {
         categoryRecycler.setLayoutManager(layoutManager);
         categoryAdapter = new CategoryAdapter(this, categoryList);
         categoryRecycler.setAdapter(categoryAdapter);
+    }
+
+    public static void showCoursesByCategory(int category){
+
+        courseList.clear();
+        courseList.addAll(fullCourseList);
+
+        List<Course> filterCourses = new ArrayList<>();
+        for (Course c:courseList){
+            if (c.getCategory() ==category )
+                filterCourses.add(c);
+        }
+        courseList.clear();
+        courseList.addAll(filterCourses);
+        courseAdapter.notifyDataSetChanged();
+
     }
 }
