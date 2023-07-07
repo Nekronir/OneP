@@ -43,7 +43,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
     @Override
     public void onBindViewHolder(@NonNull CourseViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.courseBg.setCardBackgroundColor(Color.parseColor(courses.get(position).getColor()));
-        int imageId =context.getResources().getIdentifier(courses.get(position).getImg(), "drawable", context.getPackageName());
+        @SuppressLint("DiscouragedApi") int imageId =context.getResources().getIdentifier(courses.get(position).getImg(), "drawable", context.getPackageName());
         holder.courseImage.setImageResource(imageId);
         holder.courseTitle.setText(courses.get(position).getTitle());
         holder.courseDate.setText(courses.get(position).getDate());

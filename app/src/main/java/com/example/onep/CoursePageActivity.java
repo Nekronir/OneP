@@ -9,6 +9,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.example.onep.model.Course;
 import com.example.onep.model.Oder;
 
 public class CoursePageActivity extends AppCompatActivity {

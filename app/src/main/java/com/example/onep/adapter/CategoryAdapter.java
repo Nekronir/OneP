@@ -1,5 +1,6 @@
 package com.example.onep.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,10 +16,14 @@ import com.example.onep.model.Category;
 
 import java.util.List;
 
-public class CategoryAdapter  extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
+import javax.security.auth.callback.Callback;
 
-      Context context;
+public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
+    //TODO #1 рефактор коду, проставити модифікатори доступу
+    //TODO #2 видалити статичні змінні, замініти на каллбек(адаптер не повинен знати про актівіті)
+    Context context;
     List<Category> categories;
+
 
     public CategoryAdapter(Context context, List<Category> categories) {
         this.context = context;
@@ -28,40 +33,31 @@ public class CategoryAdapter  extends RecyclerView.Adapter<CategoryAdapter.Categ
     @NonNull
     @Override
     public CategoryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View caterotyItemps = LayoutInflater.from(context).inflate(R.layout.category_item,parent,false);
+        View caterotyItemps = LayoutInflater.from(context).inflate(R.layout.category_item, parent, false);
         return new CategoryViewHolder(caterotyItemps);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CategoryViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CategoryViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.categoryTitle.setText(categories.get(position).getTitle());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 MainActivity.showCoursesByCategory(categories.get(position).getId());
-
-
             }
         });
-
-
     }
 
     @Override
     public int getItemCount() {
-
         return categories.size();
     }
 
-    public static final class CategoryViewHolder extends RecyclerView.ViewHolder{
-
+    public static final class CategoryViewHolder extends RecyclerView.ViewHolder {
         TextView categoryTitle;
-
         public CategoryViewHolder(@NonNull View itemView) {
-
             super(itemView);
-
             categoryTitle = itemView.findViewById(R.id.categoryTitle);
         }
     }

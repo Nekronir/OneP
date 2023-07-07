@@ -17,10 +17,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-     RecyclerView categoryRecycler, courseRecycler;
-     CategoryAdapter categoryAdapter;
-    static CourseAdapter courseAdapter;
-    static List<Course> courseList = new ArrayList<>();
+    private RecyclerView categoryRecycler, courseRecycler;
+    private CategoryAdapter categoryAdapter;
+    private static CourseAdapter courseAdapter;
+    private static List<Course> courseList = new ArrayList<>();
     static List<Course> fullCourseList = new ArrayList<>();
 
 
@@ -33,19 +33,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private List<Course> fetchDataToCourseAdapter() {
-//        List<Course> courseList = new ArrayList<>();
-        courseList.add(new Course(1, "ic_java", "Профессия Java\nразработчик", "1 октября", "начальний", "#424345","test",3));
-        courseList.add(new Course(2, "ic_python", "Профессия Python\nразработчик", "7 декабря", "начальний", "#9FA52D","test",3));
-        courseList.add(new Course(3, "ic_unity", "Профессия Unity \nразработчик", "10 января", "начальний", "#C03D3D","test",1));
-        courseList.add(new Course(4, "ic_front_end", "Профессия Front-end \nразработчик", "15 января", "начальний", "#VEC6D6D","test",2));
-        courseList.add(new Course(5, "ic_csharp", "Профессия C# \nразработчик", "15 мая", "начальний", "#FA5252","test",2));
-        courseList.add(new Course(6, "ic_csharp", "Профессия PHP \nразработчик", "16 января", "начальний", "#4476D6","test",4));
+        courseList.add(new Course(1, "ic_java", "Профессия Java\nразработчик", "1 октября", "начальний", "#424345", "test", 3));
+        courseList.add(new Course(2, "ic_python", "Профессия Python\nразработчик", "7 декабря", "начальний", "#9FA52D", "test", 3));
+        courseList.add(new Course(3, "ic_unity", "Профессия Unity \nразработчик", "10 января", "начальний", "#C03D3D", "test", 1));
+        courseList.add(new Course(4, "ic_front_end", "Профессия Front-end \nразработчик", "15 января", "начальний", "#FA5252", "test", 2));
+        courseList.add(new Course(5, "ic_csharp", "Профессия C# \nразработчик", "15 мая", "начальний", "#FA5252", "test", 2));
+        courseList.add(new Course(6, "ic_csharp", "Профессия PHP \nразработчик", "16 января", "начальний", "#4476D6", "test", 4));
         fullCourseList.addAll(courseList);
         return courseList;
 
 
     }
-
 
 
     private List<Category> fetchDataToCategoryAdapter() {
@@ -56,7 +54,8 @@ public class MainActivity extends AppCompatActivity {
         categoryList.add(new Category(4, "Прочее"));
         return categoryList;
     }
-    public void openShoppingCard(View view){
+
+    public void openShoppingCard(View view) {
         Intent intent = new Intent(this, OderPage.class);
         startActivity(intent);
     }
@@ -77,14 +76,12 @@ public class MainActivity extends AppCompatActivity {
         categoryRecycler.setAdapter(categoryAdapter);
     }
 
-    public static void showCoursesByCategory(int category){
-
+    public static void showCoursesByCategory(int category) {
         courseList.clear();
         courseList.addAll(fullCourseList);
-
         List<Course> filterCourses = new ArrayList<>();
-        for (Course c:courseList){
-            if (c.getCategory() ==category )
+        for (Course c : courseList) {
+            if (c.getCategory() == category)
                 filterCourses.add(c);
         }
         courseList.clear();
